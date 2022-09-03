@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    baseImage= "shawon10/laravel-hello-1"
+    baseImage= "shawon10/laravel-hello-2"
     dockerimagename = "${baseImage}:${BUILD_NUMBER}"
     dockerImage = ""
   }
