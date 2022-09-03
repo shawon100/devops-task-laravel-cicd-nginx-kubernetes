@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: laravel-hello-1
+spec:
+  selector:
+    matchLabels:
+      app: laravel-hello-1
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: laravel-hello-1
+    spec:
+      nodeName: demo-cluster-m02
+      containers:
+        - name: laravel-hello-1
+          image: shawon10/laravel-hello-1:${BUILD_NUMBER}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80

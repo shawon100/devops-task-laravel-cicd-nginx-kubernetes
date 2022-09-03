@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: laravel-hello-2-service
+spec:
+  selector:
+    app: laravel-hello-2
+  ports:
+    - protocol: "TCP"
+      port: 80
+  type: NodePort
