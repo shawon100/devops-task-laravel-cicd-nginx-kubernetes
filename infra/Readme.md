@@ -19,6 +19,17 @@ docker --version
 
 ```
 
+## Kubectl Install
+
+```
+curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+
+chmod +x ./kubectl
+
+mv ./kubectl /usr/local/bin
+
+```
+
 ## Install Minikube Kubernetes Cluster (1 master and 2 worker )
 
 Run this Script on your Terminal 
