@@ -18,10 +18,11 @@ pipeline {
 
     stage('Build image') {
       steps{
-        script {
-           sh 'cd app2'
-           sh 'docker rmi -f ${baseImage}'
-           dockerImage = docker.build dockerimagename
+        dir('app2'){
+          script {
+            sh 'docker rmi -f ${baseImage}'
+            dockerImage = docker.build dockerimagename
+          }
         }
       }
     }
@@ -42,9 +43,11 @@ pipeline {
 
     stage('Deploying App to Kubernetes') {
       steps {
-        script {
-           kubernetesDeploy(enableConfigSubstitution: true, configs: "deploy/deployment.yaml", kubeconfigId: "kubernetes")
-           kubernetesDeploy(configs: "deploy/service.yaml", kubeconfigId: "kubernetes")
+        dir('app2'){
+          script {
+            kubernetesDeploy(enableConfigSubstitution: true, configs: "deploy/deployment.yaml", kubeconfigId: "kubernetes")
+            kubernetesDeploy(configs: "deploy/service.yaml", kubeconfigId: "kubernetes")
+          }
         }
       }
     }
