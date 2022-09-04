@@ -12,3 +12,5 @@ Table of contents
 - [Jenkins Pipeline Setup for App2](https://github.com/shawon100/devops-task-laravel-cicd-nginx-kubernetes/blob/main/app2/README.md)
 
 - [Nginx Setup on Kubernetes](https://github.com/shawon100/devops-task-laravel-cicd-nginx-kubernetes/blob/main/nginx/Readme.md)
+
+- [Video Tutorial](https://www.youtube.com/watch?v=eI3hdcU0jJg)
